@@ -1,13 +1,13 @@
 %define	name	powermanga
 %define	version	0.90
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 %define	Summary	Shoot them up with 3d graphics
 
 Summary: 	%{Summary}
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-License:	Artistic
+License:	GPLv3
 Group:		Games/Arcade
 BuildRequires:	X11-devel SDL_mixer-devel png-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -15,7 +15,6 @@ Source0:	http://linux.tlk.fr/games/Powermanga/download/%{name}-%{version}.tgz
 Source11:	%{name}.16.png
 Source12:	%{name}.32.png
 Source13:	%{name}.48.png
-ExclusiveArch:	%{ix86} ppc
 URL:		http://linux.tlk.fr/games/Powermanga/
 Requires(post):	rpm-helper
 Requires(postun):	rpm-helper
