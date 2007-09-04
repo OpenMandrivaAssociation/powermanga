@@ -9,7 +9,7 @@ Version:	%{version}
 Release:	%{release}
 License:	Artistic
 Group:		Games/Arcade
-BuildRequires:	X11-devel SDL_mixer-devel
+BuildRequires:	X11-devel SDL_mixer-devel png-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source0:	http://linux.tlk.fr/games/Powermanga/download/%{name}-%{version}.tgz
 Source11:	%{name}.16.png
