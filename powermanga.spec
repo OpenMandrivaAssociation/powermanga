@@ -1,6 +1,6 @@
 %define	name	powermanga
-%define	version	0.80
-%define	release	%mkrel 2
+%define	version	0.90
+%define	release	%mkrel 1
 %define	Summary	Shoot them up with 3d graphics
 
 Summary: 	%{Summary}
@@ -9,7 +9,7 @@ Version:	%{version}
 Release:	%{release}
 License:	Artistic
 Group:		Games/Arcade
-BuildRequires:	XFree86-devel SDL_mixer-devel
+BuildRequires:	X11-devel SDL_mixer-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source0:	http://linux.tlk.fr/games/Powermanga/download/%{name}-%{version}.tgz
 Source11:	%{name}.16.png
@@ -41,24 +41,18 @@ rm -rf $RPM_BUILD_ROOT
 install -d install %{buildroot}%{_gamesdatadir}/%{name}/texts
 install -m 644 texts/*.txt texts/*.ini %{buildroot}%{_gamesdatadir}/%{name}/texts
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="%{_gamesbindir}/%{name}" icon="%{name}.png" \
-  needs="x11" section="More Applications/Games/Arcade" title="Power Manga" \
-  longtitle="%{Summary}" xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=Power Manga
-Comment=%{Summary}
+Comment=%{summary}
 Exec=%{_gamesbindir}/%{name}
 Icon=%{name}
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
+Categories=Game;ArcadeGame;
 EOF
 
 install -m644 %{SOURCE11} -D $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
@@ -83,7 +77,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(-, root, games) %{_gamesbindir}/%{name}
 %{_gamesdatadir}/%{name}
 %{_mandir}/man6/%{name}.6*
-%{_menudir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
