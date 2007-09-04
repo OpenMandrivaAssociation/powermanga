@@ -7,7 +7,7 @@ Summary: 	%{Summary}
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
-License:	GPLv3
+License:	GPLv3+
 Group:		Games/Arcade
 BuildRequires:	X11-devel SDL_mixer-devel png-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
