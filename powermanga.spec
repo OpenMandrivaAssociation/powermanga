@@ -1,12 +1,11 @@
 %define	name	powermanga
 %define	version	0.90
-%define	release	%mkrel 3
 %define	Summary	Shoot 'em up game with 3D graphics
 
 Summary: 	%{Summary}
 Name:		%{name}
 Version:	%{version}
-Release:	%{release}
+Release:	%mkrel 4
 License:	GPLv3+
 Group:		Games/Arcade
 BuildRequires:	X11-devel SDL_mixer-devel png-devel
