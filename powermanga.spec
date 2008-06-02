@@ -27,7 +27,7 @@ a ton of surprises.
 %prep
 %setup -q
 #(peroyvind) fix path to scoredir
-perl -pi -e "s#/var/games#%{_localstatedir}/games#g" src/Makefile.in
+perl -pi -e "s#/var/games#%{_localstatedir}/lib/games#g" src/Makefile.in
 
 %build
 %configure2_5x	--mandir=%{_mandir}/man6
@@ -60,9 +60,9 @@ install -m644 %{SOURCE13} -D %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{name}
 
 %post
 %{update_menus}
-%create_ghostfile %{_localstatedir}/games/%{name}.hi root games 664
-%create_ghostfile %{_localstatedir}/games/%{name}.hi-easy root games 664
-%create_ghostfile %{_localstatedir}/games/%{name}.hi-hard root games 664
+%create_ghostfile %{_localstatedir}/lib/games/%{name}.hi root games 664
+%create_ghostfile %{_localstatedir}/lib/games/%{name}.hi-easy root games 664
+%create_ghostfile %{_localstatedir}/lib/games/%{name}.hi-hard root games 664
 
 %postun
 %{clean_menus}
@@ -78,7 +78,7 @@ rm -rf %{buildroot}
 %{_mandir}/man6/%{name}.6*
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.png
-%attr(664, root, games) %ghost %{_localstatedir}/games/%{name}.hi
-%attr(664, root, games) %ghost %{_localstatedir}/games/%{name}.hi-easy
-%attr(664, root, games) %ghost %{_localstatedir}/games/%{name}.hi-hard
+%attr(664, root, games) %ghost %{_localstatedir}/lib/games/%{name}.hi
+%attr(664, root, games) %ghost %{_localstatedir}/lib/games/%{name}.hi-easy
+%attr(664, root, games) %ghost %{_localstatedir}/lib/games/%{name}.hi-hard
 
