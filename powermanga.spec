@@ -59,13 +59,17 @@ install -m644 %{SOURCE12} -D %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}
 install -m644 %{SOURCE13} -D %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{name}.png
 
 %post
+%if %mdkversion < 200900
 %{update_menus}
+%endif
 %create_ghostfile %{_localstatedir}/lib/games/%{name}.hi root games 664
 %create_ghostfile %{_localstatedir}/lib/games/%{name}.hi-easy root games 664
 %create_ghostfile %{_localstatedir}/lib/games/%{name}.hi-hard root games 664
 
+%if %mdkversion < 200900
 %postun
 %{clean_menus}
+%endif
 
 %clean
 rm -rf %{buildroot}
