@@ -5,7 +5,7 @@
 Summary: 	%{Summary}
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	GPLv3+
 Group:		Games/Arcade
 BuildRequires:	X11-devel SDL_mixer-devel png-devel
