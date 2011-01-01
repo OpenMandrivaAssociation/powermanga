@@ -8,7 +8,8 @@ Version:	%{version}
 Release:	%mkrel 8
 License:	GPLv3+
 Group:		Games/Arcade
-BuildRequires:	X11-devel SDL_mixer-devel png-devel
+BuildRequires:	SDL-devel
+BuildRequires:	SDL_mixer-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Source0:	http://linux.tlk.fr/games/Powermanga/download/%{name}-%{version}.tgz
 Source11:	%{name}.16.png
