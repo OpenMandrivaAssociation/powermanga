@@ -5,7 +5,7 @@
 Summary: 	%{Summary}
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 8
+Release:	%mkrel 9
 License:	GPLv3+
 Group:		Games/Arcade
 BuildRequires:	SDL-devel
