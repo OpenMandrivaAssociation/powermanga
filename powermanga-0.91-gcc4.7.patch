@@ -1,0 +1,14 @@
+diff -urN powermanga-0.91/src/Makefile.am powermanga-0.91-patched/src/Makefile.am
+--- powermanga-0.91/src/Makefile.am	2012-08-31 20:03:48.661647904 +1100
++++ powermanga-0.91-patched/src/Makefile.am	2012-08-31 20:09:49.436663064 +1100
+@@ -7,8 +7,8 @@
+ powermanga_SOURCES = $(SOURCES_MAIN) $(SOURCES_C) $(SOURCES_ASM)
+ powermanga_CFLAGS = -DPREFIX=\"$(prefix)\" \
+                     -DSCOREFILE=\"$(scoredir)/$(score)\" \
+-                    @XLIB_CFLAGS@ @SDL_CFLAGS@ 
+-powermanga_LDADD = @XLIB_LIBS@ @SDL_LIBS@
++                    @XLIB_CFLAGS@ @SDL_CFLAGS@ -Wno-error=missing-field-initializers
++powermanga_LDADD = @XLIB_LIBS@ @SDL_LIBS@ -lm
+ 
+ install-data-hook:
+ 	-chown root:games "$(DESTDIR)/$(gamesdir)/powermanga"

@@ -1,0 +1,11 @@
+diff -urN powermanga-0.91/src/powermanga.h powermanga-0.91-patched/src/powermanga.h
+--- powermanga-0.91/src/powermanga.h	2012-08-27 02:44:26.000000000 +1100
++++ powermanga-0.91-patched/src/powermanga.h	2012-08-31 20:01:31.989642370 +1100
+@@ -149,6 +149,7 @@
+ 
+ #ifdef PNG_EXPORT_ENABLE
+ #include <png.h>
++#include <zlib.h>
+ #endif
+ 
+ #if !defined(_WIN32_WCE)
