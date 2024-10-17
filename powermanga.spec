@@ -4,7 +4,7 @@ Version:	0.91
 Release:	2
 License:	GPLv3+
 Group:		Games/Arcade
-URL:		http://linux.tlk.fr/games/Powermanga/
+URL:		https://linux.tlk.fr/games/Powermanga/
 Source0:	http://linux.tlk.fr/games/Powermanga/download/%{name}-%{version}.tgz
 Source11:	%{name}.16.png
 Source12:	%{name}.32.png
