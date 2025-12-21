@@ -11,6 +11,11 @@ Source12:	%{name}.32.png
 Source13:	%{name}.48.png
 Patch0:		powermanga-0.91-zlib.patch
 Patch1:		powermanga-0.91-gcc4.7.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(SDL_mixer)
 BuildRequires:	pkgconfig(libpng)
